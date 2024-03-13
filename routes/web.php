@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,5 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia('Home');
-});
+Route::get('/', [LoginController::class, "index"])->name("index");
+Route::get('/register', [LoginController::class, "register"])->name('register');
